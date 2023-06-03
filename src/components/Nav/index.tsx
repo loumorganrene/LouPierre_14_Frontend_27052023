@@ -1,4 +1,4 @@
-import HRNetLogo from '../../assets/img/HRNetLogo.png'
+import HRNetLogo from '../../assets/wealthHealthLogo.jpg'
 import { Link } from 'react-router-dom'
 import '../Nav/Nav.scss'
 
@@ -16,13 +16,15 @@ function Nav() {
                 <h1 className="sr-only">HRNet</h1>
             </Link>
             <div>
-                <Link to="/employees_list"
+                <Link to="/employees"
                     className="main-nav-item"
                 >
-                    <i className="fa fa-sign-out"></i>Employees List
+                    <i className="fa-solid fa-users"></i>
+                    <span> Employees</span>
                 </Link>
-                <Link to='/create_employees' className="main-nav-item">
-                    <i className="fa fa-user-circle"></i>Create Employee
+                <Link to='/employees/create' className="main-nav-item">
+                    <i className="fa-solid fa-user-plus"></i>
+                    <span> Add Employee</span>
                 </Link>
             </div >
         </nav >
