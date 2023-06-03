@@ -1,0 +1,41 @@
+.errorMsg {
+    display: flex;
+    flex-direction: column;
+    max-width: 90vw;
+    align-items: center;
+    padding: 0;
+}
+
+.errorMsg img {
+    max-width: 50%;
+    width: 60%;
+    margin: 10rem 0 1rem;
+}
+
+.errorMsg p {
+    margin: 0 1rem 15rem;
+    font-size: 1.4rem;
+    text-align: center;
+    color: #015033;
+}
+
+.errorMsg .home_link {
+    margin: 0;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+@media (min-width: 720px) {
+    .errorMsg {
+            margin: 2rem 8rem;
+    }
+    
+    .errorMsg img {
+        margin: 10rem 0 5rem;
+    }
+
+    .errorMsg p {
+        margin: 0 0 15rem;
+        font-size: 2rem;
+    }
+}
