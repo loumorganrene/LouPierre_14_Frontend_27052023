@@ -1,0 +1,21 @@
+.main-hero {
+    width: 100%;
+
+    .main-hero-img {
+        object-fit: cover;
+        object-position: center 59%;
+    }
+
+    img {
+        width: 100%;
+        max-height: 600px;
+    }
+}
+
+.main-company {
+    margin: 1em 0 0 1em;
+    img {
+        max-width: 100%;
+        width: 100px;
+    }
+}

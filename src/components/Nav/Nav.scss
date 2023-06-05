@@ -2,37 +2,42 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px;
+  padding: 0px 20px 5px;
   margin: 0;
   box-shadow: 0 4px 5px -2px gray;
-  max-height: 100px;
+  max-height: 200px;
 
   a,
   span {
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--primary-clr);
   }
 
   a.router-link-exact-active {
-    color: #42b983;
+    color: var(--secondary-clr);
   }
 
-  .main-nav-item {
-    text-decoration: none;
-    margin-right: 0.5rem;
-
-    &:hover {
-      text-decoration: underline;
-    }
+  .main-nav-links {
+    display: flex;
+    padding-top: 10px;
+    .main-nav-item {
+        text-decoration: none;
+        margin-right: .5rem;
+    
+        &:hover {
+          text-decoration: underline;
+          color: var(--secondary-clr);
+        }
+      }
   }
 
   .main-nav-logo {
     display: flex;
-    align-items: center;
+    justify-content: flex-start;
   }
 
   .main-nav-logo-image {
     max-width: 100%;
-    width: 100px;
+    width: 120px;
   }
 }

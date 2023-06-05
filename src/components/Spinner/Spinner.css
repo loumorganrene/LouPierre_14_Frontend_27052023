@@ -11,7 +11,7 @@
 .loader {
     width: 10rem;
     height: 10rem;
-    border: 5px solid #00bc77;
+    border: 5px solid var(--secondary-clr);
     border-bottom-color: transparent;
     border-radius: 50%;
     display: inline-block;
