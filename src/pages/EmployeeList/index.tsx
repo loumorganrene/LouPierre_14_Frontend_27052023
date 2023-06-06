@@ -1,4 +1,7 @@
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import DataTable from 'react-data-table-component'
+import columns from '../../components/DataTable'
 import '../EmployeeList/EmployeeList.scss'
 
 type Employee = {
@@ -15,14 +18,22 @@ type Employee = {
 }
 
 function EmployeeList() {
-  const {
-    employeesList,
-  } = useSelector((state: { employees: { employeesList: Array<Employee>, isLoading: boolean } }) => state.employees)
 
+  const { employeesList } = useSelector(
+    (state: { employees: { employeesList: Array<Employee> } }) => state.employees
+  )
+  
   return (
     <main>
       <h2>Current Employees</h2>
-      {employeesList.map((employee) => <p key={employee.id}>{employee.first_name}</p>)}
+        <DataTable
+          columns={columns}
+          data={employeesList}
+          pagination
+        />
+      <footer>
+        <Link to='/'>Home</Link>
+      </footer>
     </main>
   )
 }
