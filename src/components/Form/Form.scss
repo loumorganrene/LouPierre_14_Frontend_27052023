@@ -1,0 +1,62 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: .75em;
+    text-align: left;
+    font-weight: 500;
+    width: calc(300px + 12px);
+
+    .input,
+    input,
+    select,
+    button {
+        font: inherit;
+        width: inherit;
+        height: 22px;
+        font-size: 1em;
+        font-weight: 500;
+        padding: .5em;
+        border: solid grey 1px;
+        border-radius: 5px;
+    }
+
+    select,
+    button {
+        width: calc(300px + 1em);
+        height: calc(30px + .5em);
+    }
+
+    .form-address-container {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        gap: .5em;
+        width: calc(300px + 12px);
+        padding: 1em .75em;
+        margin-left: .75em;
+    }
+
+    p {
+        max-width: 300px;
+        height: fit-content;
+    }
+
+    button {
+        align-self: center;
+        width: 100px;
+        margin-top: 1em;
+        border: none;
+        cursor: pointer;
+        outline: inherit;
+        border: solid grey 1px;
+        border-radius: 5px;
+    }
+
+    label::after {
+    content: "";
+    display: block;
+    margin: 0.2rem 0;
+    width: 3.5rem;
+    border-bottom: 3px solid var(--secondary-clr);
+    }
+}

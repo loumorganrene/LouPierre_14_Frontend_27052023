@@ -31,7 +31,7 @@ const ClearButton = styled.button`
 
 interface Props {
     filterText: string,
-    onFilter: (e: React.ChangeEvent<HTMLInputElement>)=> void,
+    onFilter: (e: {currentTarget: {value: string}})=> void,
     onClear: ()=> void,
 }
 

@@ -1,11 +1,11 @@
-import Spinner from '../../components/Spinner'
+import Form from '../../components/Form'
 import '../EmployeeCreate/EmployeeCreate.scss'
 
 function EmployeeCreate() {
   return (
       <main>
         <h2>Create Employee</h2>
-        <Spinner />
+        <Form/>
       </main>
   )
 }
