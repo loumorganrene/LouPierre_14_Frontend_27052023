@@ -1,29 +1,18 @@
 import { useState, useMemo } from 'react'
-import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { Employee } from "../../app/data/employees_list"
 import DataTable from 'react-data-table-component'
 import columns from '../../components/DataTable/Columns'
 import FilterComponent from '../../components/DataTable/Filtering'
 import '../EmployeeList/EmployeeList.scss'
-
-type Employee = {
-  id: number,
-  first_name: string,
-  last_name: string,
-  birth_date: string,
-  start_date: string,
-  department: string,
-  adress_street: string,
-  adress_city: string,
-  adress_state: string,
-  adress_zip: string,
-}
 
 function EmployeeList() {
 
   const { employeesList } = useSelector(
     (state: { employees: { employeesList: Array<Employee> } }) => state.employees
   )
+  console.log(employeesList)
 
   const [filterText, setFilterText] = useState('');
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);

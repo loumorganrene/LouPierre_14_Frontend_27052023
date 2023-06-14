@@ -1,16 +1,34 @@
 import { useState } from "react"
+import { useSelector } from 'react-redux'
+// data
+import { Employee } from "../../app/data/employees_list"
+import { states } from "../../app/data/states"
+import removeDuplicates from "../../utils/utils"
+// form with datepicker
 import { Controller, useForm } from "react-hook-form"
 import ReactDatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import 'react-datepicker/dist/react-datepicker-cssmodules.css'
+//styling
 import './Form.scss'
 
 function Form() {
+
+  const { employeesList } = useSelector(
+    (state: { employees: { employeesList: Array<Employee> } }) => state.employees
+  )
+
+  const departmentsList = removeDuplicates(employeesList
+    .map(employee => employee.department)
+    .sort(function (a, b) {
+      return a > b
+    }))
+
   const { control, register, handleSubmit } = useForm();
   const [data, setData] = useState("");
 
   return (
-    <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+    <form onSubmit={handleSubmit((data) => {setData(JSON.stringify(data))})}>
       <label htmlFor="firstname">First Name</label>
       <input id="firstname" {...register("first_name")} />
       <label htmlFor="lastname">Last Name</label>
@@ -51,23 +69,23 @@ function Form() {
         <input id="city" {...register("adress_city")} />
         <label htmlFor="state">State</label>
         <select id="state" {...register("adress_state")}>
-          <option value="">Select...</option>
-          <option value="A">Option A</option>
-          <option value="B">Option B</option>
+          {states.map(
+            state => <option key={state.name} value={state.abbreviation}>{state.name}</option>
+          )}
         </select>
         <label htmlFor="zip">Zip Code</label>
         <input id="zip" {...register("adress_zip")} />
       </fieldset>
       <label htmlFor="department">Department</label>
       <select id="department" {...register("department")}>
-        <option value="">Select...</option>
-        <option value="A">Option A</option>
-        <option value="B">Option B</option>
+        {departmentsList.map(
+          department => <option key={department} value={department}>{department}</option>
+        )}
       </select>
       <button type="submit">Save</button>
       <p>{data}</p>
     </form>
-    
+
   )
 }
 
