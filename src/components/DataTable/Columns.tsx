@@ -11,7 +11,7 @@ const columns = [
     },
     {
         name: 'Start Date',
-        selector: (row: { start_date: string }) => row.start_date,
+        selector: (row: { start_date: string }) => row.start_date.split('T')[0],
         sortable: true,
     },
     {
@@ -21,7 +21,7 @@ const columns = [
     },
     {
         name: 'Date of Birth',
-        selector: (row: { birth_date: string }) => row.birth_date,
+        selector: (row: { birth_date: string }) => row.birth_date.split('T')[0],
         sortable: true,
     },
     {

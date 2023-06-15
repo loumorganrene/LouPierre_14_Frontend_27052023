@@ -27,8 +27,8 @@ function EmployeeList() {
   const subHeaderComponentMemo = useMemo(() => {
     const handleClear = () => {
       if (filterText) {
-        setResetPaginationToggle(!resetPaginationToggle);
-        setFilterText('');
+        setResetPaginationToggle(!resetPaginationToggle)
+        setFilterText('')
       }
     }
 

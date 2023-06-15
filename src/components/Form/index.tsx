@@ -28,7 +28,7 @@ function Form() {
   const [data, setData] = useState("");
 
   return (
-    <form onSubmit={handleSubmit((data) => {setData(JSON.stringify(data))})}>
+    <form onSubmit={handleSubmit((newEmployee) => { setData(JSON.stringify(newEmployee)); console.log(data) })}>
       <label htmlFor="firstname">First Name</label>
       <input id="firstname" {...register("first_name")} />
       <label htmlFor="lastname">Last Name</label>
@@ -37,13 +37,13 @@ function Form() {
       <Controller
         control={control}
         name="birth_date"
-        render={({ field }) => (
+        render={({ field: { onChange, value } }) => (
           <ReactDatePicker
             id="birthdate"
             className="input"
             dateFormat="dd/MM/yyyy"
-            onChange={(e) => field.onChange(e)}
-            selected={field.value}
+            onChange={onChange}
+            selected={value}
           />
         )}
       />
@@ -51,13 +51,13 @@ function Form() {
       <Controller
         control={control}
         name="start_date"
-        render={({ field }) => (
+        render={({ field: { onChange, value } }) => (
           <ReactDatePicker
             id="startdate"
             className="input"
             dateFormat="dd/MM/yyyy"
-            onChange={(e) => field.onChange(e)}
-            selected={field.value}
+            onChange={onChange}
+            selected={value}
           />
         )}
       />
@@ -83,7 +83,7 @@ function Form() {
         )}
       </select>
       <button type="submit">Save</button>
-      <p>{data}</p>
+      {/* <p>{JSON.parse(data)}</p> */}
     </form>
 
   )
