@@ -1,9 +1,10 @@
 import { useState } from "react"
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 // data
 import { Employee } from "../../app/data/employees_list"
 import { states } from "../../app/data/states"
-import removeDuplicates from "../../utils/utils"
+import { removeDuplicates } from "../../utils/utils"
+import { addEmployee } from "../../features/employees/employee.slice"
 // form with datepicker
 import { Controller, useForm } from "react-hook-form"
 import ReactDatePicker from "react-datepicker"
@@ -14,6 +15,10 @@ import './Form.scss'
 
 function Form() {
 
+  const dispatch = useDispatch()
+  const { control, register, handleSubmit } = useForm()
+  const [data, setData] = useState("")
+
   const { employeesList } = useSelector(
     (state: { employees: { employeesList: Array<Employee> } }) => state.employees
   )
@@ -21,14 +26,24 @@ function Form() {
   const departmentsList = removeDuplicates(employeesList
     .map(employee => employee.department)
     .sort(function (a, b) {
-      return a > b
+      if (a < b) {
+        return -1
+      }
+      if (a > b) {
+        return 1
+      }
+      return 0
     }))
 
-  const { control, register, handleSubmit } = useForm();
-  const [data, setData] = useState("");
-
   return (
-    <form onSubmit={handleSubmit((newEmployee) => { setData(JSON.stringify(newEmployee)); console.log(data) })}>
+    <form onSubmit={handleSubmit(
+      (newEmployee) => {
+        setData(JSON.stringify(newEmployee))
+        console.log(data)
+        dispatch(addEmployee(newEmployee))
+      }
+    )}
+    >
       <label htmlFor="firstname">First Name</label>
       <input id="firstname" {...register("first_name")} />
       <label htmlFor="lastname">Last Name</label>
