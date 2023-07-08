@@ -10,6 +10,8 @@ import { Controller, useForm } from "react-hook-form"
 import ReactDatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import 'react-datepicker/dist/react-datepicker-cssmodules.css'
+import { Modal, ModalButton } from "react-mini-modal"
+import "/node_modules/react-mini-modal/dist/style.css"
 //styling
 import './Form.scss'
 
@@ -18,6 +20,7 @@ function Form() {
   const dispatch = useDispatch()
   const { control, register, handleSubmit } = useForm()
   const [data, setData] = useState("")
+  const [open, setOpen] = useState(false)
 
   const { employeesList } = useSelector(
     (state: { employees: { employeesList: Array<Employee> } }) => state.employees
@@ -35,7 +38,15 @@ function Form() {
       return 0
     }))
 
-  return (
+  return (<>
+    { open && <Modal
+      content="Employee Created !"
+      color='grey'
+      backgroundColor=''
+      footerButton={<ModalButton onClick={() => setOpen(false)} content="Super !" />}
+      open={open}
+      onClose={() => setOpen(false)}
+    />}
     <form onSubmit={handleSubmit(
       (newEmployee) => {
         setData(JSON.stringify(newEmployee))
@@ -100,8 +111,7 @@ function Form() {
       <button type="submit">Save</button>
       {/* <p>{JSON.parse(data)}</p> */}
     </form>
-
-  )
+  </>)
 }
 
 export default Form

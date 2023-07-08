@@ -12,7 +12,6 @@ function EmployeeList() {
   const { employeesList } = useSelector(
     (state: { employees: { employeesList: Array<Employee> } }) => state.employees
   )
-  console.log(employeesList)
 
   const [filterText, setFilterText] = useState('');
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false);
