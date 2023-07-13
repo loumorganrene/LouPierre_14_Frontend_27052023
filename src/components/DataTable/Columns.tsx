@@ -1,48 +1,69 @@
-const columns = [
+import { TableColumn } from "react-data-table-component"
+import { Employee } from "../../app/data/employees_list"
+
+type DataRow = Employee
+
+const columns: TableColumn<DataRow>[] = [
     {
         name: 'First Name',
-        selector: (row: { first_name: string }) => row.first_name,
+        selector: row => row.first_name,
         sortable: true,
+        wrap: true,
+        minWidth: 'fit-content',
     },
     {
         name: 'Last Name',
-        selector: (row: { last_name: string }) => row.last_name,
+        selector: row => row.last_name,
         sortable: true,
+        minWidth: 'fit-content',
     },
     {
         name: 'Start Date',
-        selector: (row: { start_date: string }) => row.start_date.split('T')[0],
+        selector: row => row.start_date.split('T')[0],
         sortable: true,
+        hide: 1024,
     },
     {
         name: 'Department',
-        selector: (row: { department: string }) => row.department,
+        selector: row => row.department,
         sortable: true,
+        wrap: true,
+        center: true,
+        minWidth: '150px',
     },
     {
         name: 'Date of Birth',
-        selector: (row: { birth_date: string }) => row.birth_date.split('T')[0],
+        selector: row => row.birth_date.split('T')[0],
         sortable: true,
+        hide: 1024
     },
     {
         name: 'Street',
-        selector: (row: { adress_street: string }) => row.adress_street,
+        selector: row => row.adress_street,
         sortable: true,
+        wrap: true,
+        center: true,
+        minWidth: '150px',
+        hide: 1024,
     },
     {
         name: 'City',
-        selector: (row: { adress_city: string }) => row.adress_city,
+        selector: row => row.adress_city,
         sortable: true,
+        center: true,
     },
     {
         name: 'State',
-        selector: (row: { adress_state: string }) => row.adress_state,
+        selector: row => row.adress_state,
         sortable: true,
+        center: true,
     },
     {
         name: 'Zip',
-        selector: (row: { adress_zip: string }) => row.adress_zip,
+        selector: row => row.adress_zip,
         sortable: true,
+        center: true,
+        hide: 1024,
     },
 ]
 

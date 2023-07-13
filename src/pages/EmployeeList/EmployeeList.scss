@@ -1,3 +1,24 @@
+.dataTable__wrapper {
+    max-width: 100%;
+    width: 80vw;
+    .dataTable--rowData {
+        display: flex;
+        flex-direction: column;
+        margin: 1em 5em;
+        .rowData {
+            display: flex;
+            span {
+                font-weight: 700;
+                padding-right: .5em;
+            }
+        }
+        .rowData--date {
+            align-items: baseline;
+            gap: 2em;
+        }
+    }
+}
+
 footer {
     display: flex;
     justify-content: center;
