@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 // data
 import { Employee } from "../../app/data/employees_list"
@@ -39,17 +39,16 @@ function Form() {
     }))
 
   return (<>
-    { open === true && <Modal
+    <Modal
       content="Employee Created !"
       color='grey'
       backgroundColor=''
       open={open}
       onClose={() => setOpen(false)}
-    />}
+    />
     <form onSubmit={handleSubmit(
       (newEmployee) => {
         setData(JSON.stringify(newEmployee))
-        console.log(data)
         dispatch(addEmployee(newEmployee))
         setOpen(true)
         reset()
@@ -110,7 +109,6 @@ function Form() {
         )}
       </select>
       <button type="submit">Save</button>
-      {/* <p>{JSON.parse(data)}</p> */}
     </form>
   </>)
 }

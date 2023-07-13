@@ -53,8 +53,7 @@ function EmployeeList() {
       </p>
     </div>
   </div>
-
-
+  
   return (
     <main>
       <h2>Current Employees</h2>
