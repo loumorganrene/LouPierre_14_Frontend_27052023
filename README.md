@@ -6,6 +6,7 @@
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 <div>
 <object type="image/svg+xml" data="https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white&link=https://github.com/react-hook-form/react-hook-form">
+<img alt="Static Badge" src="https://img.shields.io/badge/React%2520Data%2520Table%2520Component-FF4154.svg?style=for-the-badge&logo=reacttable&logoColor=white&link=https%3A%2F%2Fgithub.com%2Fjbetancur%2Freact-data-table-component">
 </object>
 <img src="https://img.shields.io/badge/React%20Datepicker-007ACC.svg?style=for-the-badge&logo=hackerone&logoColor=white" href="https://github.com/Hacker0x01/react-datepicker"/>
 <img src="https://img.shields.io/badge/React%20Data%20Table%20Component-FF4154.svg?style=for-the-badge&logo=reacttable&logoColor=white" href="https://github.com/jbetancur/react-data-table-component"/>
