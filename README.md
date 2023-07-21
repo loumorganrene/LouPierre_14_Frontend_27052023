@@ -5,7 +5,7 @@
 ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 ![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)
-![React Datepicker](https://img.shields.io/badge/React%20Datepicker?style=for-the-badge&logo=hackerone&logoColor=white)
+![React Datepicker](https://img.shields.io/badge/React%20Datepicker-%23EC5990.svg?style=for-the-badge&logo=hackerone&logoColor=white)
 
 HRnet is a company's internal application to create and view employee records.
 This codebase contains the updated code needed to run the frontend for **[HRnet](https://github.com/OpenClassrooms-Student-Center/P12_Front-end)**.
