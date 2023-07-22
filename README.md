@@ -7,7 +7,7 @@
 [![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)](https://github.com/react-hook-form/react-hook-form)
 [![React Datepicker](https://img.shields.io/badge/React%20Datepicker-007ACC.svg?style=for-the-badge&logo=hackerone&logoColor=white)](https://github.com/Hacker0x01/react-datepicker)
 [![React Data Table Component](https://img.shields.io/badge/React%20Data%20Table%20Component-FF4154.svg?style=for-the-badge&logo=reacttable&logoColor=white)](https://github.com/jbetancur/react-data-table-component)
-[![React Mini Modal](https://img.shields.io/badge/React%20Mini%20Modal-FF4154?logo=react&logoColor=white)](https://github.com/loumorganrene/react-mini-modal#react-mini-modal-)
+[![React Mini Modal](https://img.shields.io/badge/React%20Mini%20Modal-FF4154.svg?style=for-the-badge&logo=react&logoColor=white)](https://github.com/loumorganrene/react-mini-modal#react-mini-modal-)
 
 
 HRnet is a company's internal application to create and view employee records.
