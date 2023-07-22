@@ -1,8 +1,3 @@
-export type State = {
-    name: string,
-    abbreviation: string
-}
-
 export const states = [
     {
         "name": "Alabama",

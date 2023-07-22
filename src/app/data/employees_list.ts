@@ -1,15 +1,3 @@
-export type Employee = {
-    first_name: string,
-    last_name: string,
-    birth_date: string,
-    start_date: string,
-    department: string,
-    adress_street: string,
-    adress_city: string,
-    adress_state: string,
-    adress_zip: string,
-}
-
 export const employeesList = [
     {
         "first_name": "Katherine",

@@ -1,7 +1,5 @@
 import { TableColumn } from "react-data-table-component"
-import { Employee } from "../../app/data/employees_list"
-
-type DataRow = Employee
+import { DataRow } from "../.."
 
 const columns: TableColumn<DataRow>[] = [
     {
@@ -21,7 +19,7 @@ const columns: TableColumn<DataRow>[] = [
         name: 'Start Date',
         selector: row => row.start_date.split('T')[0],
         sortable: true,
-        hide: 1024,
+        hide: 1200,
     },
     {
         name: 'Department',
@@ -35,7 +33,7 @@ const columns: TableColumn<DataRow>[] = [
         name: 'Date of Birth',
         selector: row => row.birth_date.split('T')[0],
         sortable: true,
-        hide: 1024
+        hide: 1200
     },
     {
         name: 'Street',
@@ -44,7 +42,7 @@ const columns: TableColumn<DataRow>[] = [
         wrap: true,
         center: true,
         minWidth: '150px',
-        hide: 1024,
+        hide: 1200,
     },
     {
         name: 'City',
@@ -63,7 +61,7 @@ const columns: TableColumn<DataRow>[] = [
         selector: row => row.adress_zip,
         sortable: true,
         center: true,
-        hide: 1024,
+        hide: 1200,
     },
 ]
 

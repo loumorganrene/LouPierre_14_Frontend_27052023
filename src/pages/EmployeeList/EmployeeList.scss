@@ -1,17 +1,29 @@
+@media only screen and (min-width: 1200px) {
+    .rdt_TableRow button {
+        display: none;
+    }
+}
+
 .dataTable__wrapper {
     max-width: 100%;
     width: 80vw;
+
     .dataTable--rowData {
         display: flex;
         flex-direction: column;
         margin: 1em 5em;
+
         .rowData {
+            font-size: .85em;
             display: flex;
+
             span {
+                color: var(--primary-clr);
                 font-weight: 700;
                 padding-right: .5em;
             }
         }
+
         .rowData--date {
             align-items: baseline;
             gap: 2em;
@@ -24,4 +36,3 @@ footer {
     justify-content: center;
     margin: 1.5em 0;
 }
-

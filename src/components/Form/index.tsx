@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useDispatch, useSelector } from 'react-redux'
 // data
-import { Employee } from "../../app/data/employees_list"
+import { Employee } from "../.."
 import { states } from "../../app/data/states"
 import { removeDuplicates } from "../../utils/utils"
 import { addEmployee } from "../../features/employees/employee.slice"
@@ -11,21 +11,30 @@ import ReactDatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import 'react-datepicker/dist/react-datepicker-cssmodules.css'
 // modal from my lib
-import { Modal } from "react-mini-modal"
-import "/node_modules/react-mini-modal/dist/style.css"
+import { Modal } from "@loumorganrene/react-mini-modal"
+import "/node_modules/@loumorganrene/react-mini-modal/dist/style.css"
 //styling
 import './Form.scss'
+
 function Form() {
 
   const dispatch = useDispatch()
   const { control, register, handleSubmit, reset } = useForm()
+  // eslint-disable-next-line
+  // @ts-ignore
   const [data, setData] = useState("")
   const [open, setOpen] = useState(false)
 
   const { employeesList } = useSelector(
     (state: { employees: { employeesList: Array<Employee> } }) => state.employees
   )
-
+  
+  /**
+   * Sorts and returns a list of unique departments from an array of employee objects.
+   *
+   * @param {Array<Object>} employeesList - The array of employee objects.
+   * @returns {Array<string>} - The sorted list of unique departments.
+   */
   const departmentsList = removeDuplicates(employeesList
     .map(employee => employee.department)
     .sort(function (a, b) {

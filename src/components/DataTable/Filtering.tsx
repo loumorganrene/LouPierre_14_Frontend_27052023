@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import { Props } from '../..'
 
 const TextField = styled.input`
 	height: 32px;
@@ -28,28 +30,32 @@ const ClearButton = styled.button`
 	align-items: center;
 	justify-content: center;
 `
-
-interface Props {
-    filterText: string,
-    onFilter: (e: {currentTarget: {value: string}})=> void,
-    onClear: ()=> void,
-}
-
-const FilterComponent = ({filterText, onFilter, onClear} : Props) => (
-    <>
-        <TextField
-            id="search"
-            type="text"
-            placeholder="Search by Name or City"
-            aria-label="Search Input"
-            value={filterText}
-            onChange={onFilter}
-        />
-        <ClearButton type="button" onClick={onClear}>
-            X
-        </ClearButton>
-    </>
+/**
+ * Component for rendering a filter input field and clear button.
+ */
+const FilterComponent = ({ filterText, onFilter, onClear }: Props) : JSX.Element => (
+	<>
+		<TextField
+			id="search"
+			type="text"
+			placeholder="Search by Name or City"
+			aria-label="Search Input"
+			value={filterText}
+			onChange={onFilter}
+		/>
+		<ClearButton type="button" onClick={onClear}>
+			X
+		</ClearButton>
+	</>
 )
 
+FilterComponent.propTypes = {
+	filterText: PropTypes.string.isRequired,
+	onFilter: PropTypes.func.isRequired,
+	onClear: PropTypes.func.isRequired,
+}
+
 export default FilterComponent
+
+
 

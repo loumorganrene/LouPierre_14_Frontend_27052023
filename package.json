@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@loumorganrene/react-mini-modal": "^1.0.0",
     "@reduxjs/toolkit": "^1.9.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
@@ -19,7 +20,6 @@
     "react-datepicker": "^4.13.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.3",
-    "react-mini-modal": "^1.0.21",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.2",
     "sort-by": "^1.2.0",
