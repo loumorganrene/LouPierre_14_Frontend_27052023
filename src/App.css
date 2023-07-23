@@ -39,3 +39,7 @@ a:hover {
   color: var(--secondary-clr);
   text-decoration: underline;
 }
+
+img {
+  width: 100%;
+}
