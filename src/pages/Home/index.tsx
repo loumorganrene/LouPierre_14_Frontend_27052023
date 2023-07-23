@@ -13,7 +13,6 @@ function Home() {
       <h2>Bienvenue</h2>
       <div className='main-hero'>
         <img
-          loading='lazy'
           className='main-hero-img'
           srcSet={`${heroImgL} 992w,
                    ${heroImgM} 768w,
