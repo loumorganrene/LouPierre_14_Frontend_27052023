@@ -7,36 +7,32 @@ export default defineConfig({
   base: "/LouPierre_14_Frontend_27052023/",
   optimizeDeps: {
     include: [
+      '@reduxjs/toolkit',
       'react',
       'react-dom',
       'react-router-dom',
       'react-redux',
       'react-data-table-component',
-      'react-datepicker'
+      'react-datepicker',
+      'react-hook-form',
+      '@loumorganrene/react-mini-modal',
     ],
-    exclude: ['@loumorganrene/react-mini-modal']
   },
   build: {
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (
-              id.includes('react') ||
-              id.includes('react-dom') ||
-              id.includes('react-router-dom') ||
-              id.includes('react-redux') ||
-              id.includes('react-data-table-component') ||
-              id.includes('react-datepicker')
-            ) {
-              return 'vendor';
-            }
-            if (id.includes('@loumorganrene/react-mini-modal')) {
-              return 'react-mini-modal';
-            }
-          }
-        }
-      }
-    }
-  }
+        manualChunks: {
+          // Create separate chunks for these dependencies
+          react: ['react'],
+          'react-dom': ['react-dom'],
+          'react-router-dom': ['react-router-dom'],
+          'react-redux': ['react-redux'],
+          'react-data-table-component': ['react-data-table-component'],
+          'react-datepicker': ['react-datepicker'],
+          'react-hook-form': ['react-hook-form'],
+          '@loumorganrene/react-mini-modal': ['@loumorganrene/react-mini-modal'],
+        },
+      },
+    },
+  },
 })
