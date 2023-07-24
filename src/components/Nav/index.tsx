@@ -1,32 +1,32 @@
 import HRNetLogo from '../../assets/hrnetLogo.svg'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import '../Nav/Nav.scss'
-
 
 function Nav() {
 
     return (
         <nav className="main-nav">
-            <Link to='/' className="main-nav-logo">
+            <NavLink to='/' className="main-nav-logo">
                 <img
                     className="main-nav-logo-image"
                     src={HRNetLogo}
                     alt="HRNet"
                 />
                 <h1 className="sr-only">HRNet</h1>
-            </Link>
-            <div className='main-nav-links'>
-                <Link to="/employees"
-                    className="main-nav-item"
-                >
-                    <i className="fa-solid fa-users"></i>
-                    <span> Employees</span>
-                </Link>
-                <Link to='/employees/create' className="main-nav-item">
-                    <i className="fa-solid fa-user-plus"></i>
-                    <span> Add Employee</span>
-                </Link>
-            </div >
+            </NavLink>
+
+            <ul className='main-nav-links'>
+                <li>
+                    <NavLink to='/employees' end className={({ isActive }) => (isActive ? 'active' : '')}>
+                        <span> Employees</span>
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to='/employees/create' end className={({ isActive }) => (isActive ? 'active' : '')}>
+                        <span> Add Employee</span>
+                    </NavLink>
+                </li>
+            </ul >
         </nav >
     )
 }

@@ -28,7 +28,7 @@ function Form() {
   const { employeesList } = useSelector(
     (state: { employees: { employeesList: Array<Employee> } }) => state.employees
   )
-  
+
   /**
    * Sorts and returns a list of unique departments from an array of employee objects.
    *
@@ -55,6 +55,7 @@ function Form() {
       open={open}
       onClose={() => setOpen(false)}
     />
+    
     <form onSubmit={handleSubmit(
       (newEmployee) => {
         setData(JSON.stringify(newEmployee))
@@ -66,8 +67,10 @@ function Form() {
     >
       <label htmlFor="firstname">First Name</label>
       <input id="firstname" {...register("first_name")} />
+
       <label htmlFor="lastname">Last Name</label>
       <input id="lastname" {...register("last_name")} />
+
       <label htmlFor="birthdate">Date of Birth</label>
       <Controller
         control={control}
@@ -82,6 +85,7 @@ function Form() {
           />
         )}
       />
+
       <label htmlFor="startdate">Start Date</label>
       <Controller
         control={control}
@@ -96,27 +100,34 @@ function Form() {
           />
         )}
       />
+
       <fieldset className="form-address-container">
         <legend>Address</legend>
+
         <label htmlFor="street">Street</label>
         <input id="street" {...register("adress_street")} />
+
         <label htmlFor="city">City</label>
         <input id="city" {...register("adress_city")} />
+        
         <label htmlFor="state">State</label>
         <select id="state" {...register("adress_state")}>
           {states.map(
             state => <option key={state.name} value={state.abbreviation}>{state.name}</option>
           )}
         </select>
+        
         <label htmlFor="zip">Zip Code</label>
         <input id="zip" {...register("adress_zip")} />
       </fieldset>
+
       <label htmlFor="department">Department</label>
       <select id="department" {...register("department")}>
         {departmentsList.map(
           department => <option key={department} value={department}>{department}</option>
         )}
       </select>
+
       <button type="submit">Save</button>
     </form>
   </>)

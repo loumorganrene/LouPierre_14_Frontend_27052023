@@ -1,33 +1,27 @@
-import heroImgXL from '../../assets/img/cytonn-photography-n95VMLxqM2I-u_1200.jpg'
-import heroImgL from '../../assets/img/cytonn-photography-n95VMLxqM2I-u_992.jpg'
-import heroImgM from '../../assets/img/cytonn-photography-n95VMLxqM2I-u_768.jpg'
-import heroImgS from '../../assets/img/cytonn-photography-n95VMLxqM2I-u_576.jpg'
-import heroImgXS from '../../assets/img/cytonn-photography-n95VMLxqM2I-u_360.jpg'
-
 import wealthHealthLogo from '../../assets/wealthHealthLogo.svg'
 import '../Home/Home.scss'
+import { Link } from 'react-router-dom'
 
 function Home() {
   return (
     <main>
-      <h2>Bienvenue</h2>
-      <div className='main-hero'>
-        <img
-          className='main-hero-img'
-          srcSet={`${heroImgL} 992w,
-                   ${heroImgM} 768w,
-                   ${heroImgS} 576w,
-                   ${heroImgXS} 360w,`}
-          sizes="(max-width: 992px) 992px,
-                 (max-width: 768px) 768px,
-                 (max-width: 576px) 576px,
-                 (max-width: 360px) 360px,
-                 1200px"
-          src={heroImgXL} alt='A handshake between two collegues' />
-      </div>
-      <div className='main-company'>
+      <h2>Welcome</h2>
+      <div className='company-logo'>
         <img loading='lazy' src={wealthHealthLogo} alt='The Wealth Health company logo' />
       </div>
+      <fieldset className="homepage-nav-container">
+        <legend>What do you want to do ?</legend>
+        <Link to="/employees"
+          className="main-nav-item"
+        >
+          <i className="fa-solid fa-users fa-fw fa-xl"></i>
+          <span> Check Employees List</span>
+        </Link>
+        <Link to='/employees/create' className="main-nav-item">
+          <i className="fa-solid fa-user-plus fa-fw fa-xl"></i>
+          <span> Add New Employee</span>
+        </Link>
+      </fieldset>
     </main>
   )
 }
