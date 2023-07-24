@@ -7,7 +7,7 @@ function Home() {
     <main>
       <h2>Welcome</h2>
       <div className='company-logo'>
-        <img loading='lazy' src={wealthHealthLogo} alt='The Wealth Health company logo' />
+        <img src={wealthHealthLogo} width="150px" height="138px" alt='The Wealth Health company logo' />
       </div>
       <fieldset className="homepage-nav-container">
         <legend>What do you want to do ?</legend>

@@ -8,6 +8,7 @@ function Nav() {
         <nav className="main-nav">
             <NavLink to='/' className="main-nav-logo">
                 <img
+                    width="120px" height="59px"
                     className="main-nav-logo-image"
                     src={HRNetLogo}
                     alt="HRNet"
