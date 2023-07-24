@@ -1,12 +1,18 @@
-import { useState, useMemo } from "react"
+import { useState, useMemo, lazy, Suspense } from "react"
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { GlobalState } from "../.."
+import Spinner from "../../components/Spinner"
 import DataTable from "react-data-table-component"
 import columns from "../../components/DataTable/Columns"
-import FilterComponent from "../../components/DataTable/Filtering"
-import ExpandableRowComponent from "../../components/DataTable/ExpandableRow"
 import "../EmployeeList/EmployeeList.scss"
+
+const FilterComponent = lazy(() =>
+  import("../../components/DataTable/Filtering")
+)
+const ExpandableRowComponent = lazy(() =>
+  import("../../components/DataTable/ExpandableRow")
+)
 
 function EmployeeList() {
 
@@ -17,7 +23,7 @@ function EmployeeList() {
 
   const [filterText, setFilterText] = useState("")
   const [resetPaginationToggle, setResetPaginationToggle] = useState(false)
-  
+
   /**
    * Filters an array of employee items based on a search text.
    *
@@ -56,18 +62,20 @@ function EmployeeList() {
     <main>
       <h2>Current Employees</h2>
       <div className="dataTable__wrapper">
-        <DataTable
-          columns={columns}
-          data={filteredItems}
-          responsive={true}
-          pagination
-          paginationResetDefaultPage={resetPaginationToggle}
-          subHeader
-          subHeaderWrap
-          subHeaderComponent={subHeaderComponentMemo}
-          expandableRows={true}
-          expandableRowsComponent={ExpandableRowComponent}
-        />
+        <Suspense fallback={<Spinner />}>
+          <DataTable
+            columns={columns}
+            data={filteredItems}
+            responsive={true}
+            pagination
+            paginationResetDefaultPage={resetPaginationToggle}
+            subHeader
+            subHeaderWrap
+            subHeaderComponent={subHeaderComponentMemo}
+            expandableRows={true}
+            expandableRowsComponent={ExpandableRowComponent}
+          />
+        </Suspense>
       </div>
       <footer>
         <Link to="/">Home</Link>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Props } from '../..'
 
 const TextField = styled.input`
-	height: 32px;
+	height: 48px;
 	width: 200px;
 	border-radius: 3px;
 	border-top-left-radius: 5px;
@@ -23,8 +23,8 @@ const ClearButton = styled.button`
 	border-bottom-left-radius: 0;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
-	height: 34px;
-	width: 32px;
+	height: 48px;
+	width: 48px;
 	text-align: center;
 	display: flex;
 	align-items: center;
