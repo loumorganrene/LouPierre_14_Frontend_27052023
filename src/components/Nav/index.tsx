@@ -18,7 +18,7 @@ function Nav() {
 
             <ul className='main-nav-links'>
                 <li>
-                    <NavLink to='/employees' end className={({ isActive }) => (isActive ? 'active' : '')}>
+                    <NavLink to='/' className={({ isActive }) => (isActive ? 'active' : '')}>
                         <span> Employees</span>
                     </NavLink>
                 </li>
