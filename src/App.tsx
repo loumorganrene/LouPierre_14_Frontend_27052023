@@ -10,15 +10,14 @@ const EmployeeCreate = lazy(() =>
 import('./pages/EmployeeCreate'))
 
 function App() {
-
   return (
     <>
       <Router basename={window.location.pathname || '' }>
         <div className="App">
           <Routes>
             <Route path='/' element={<Layout />}>
-              <Route index element={<Suspense fallback={<Spinner />}><EmployeeList /></Suspense>} />
-              <Route path="/employees/create" element={<Suspense fallback={<Spinner />}><EmployeeCreate /></Suspense>} />              
+              <Route index element={<Suspense><EmployeeCreate /></Suspense>} />
+              <Route path="/employees" element={<Suspense fallback={<Spinner />}><EmployeeList /></Suspense>} />              
               <Route path="*" element={<Error />} />
             </Route>
           </Routes>

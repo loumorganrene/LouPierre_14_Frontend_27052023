@@ -1,5 +1,4 @@
 import { useState, useMemo, lazy, Suspense } from "react"
-import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { GlobalState } from "../.."
 import Spinner from "../../components/Spinner"
@@ -77,9 +76,6 @@ function EmployeeList() {
           />
         </Suspense>
       </div>
-      <footer>
-        <Link to="/">Home</Link>
-      </footer>
     </main>
   )
 }

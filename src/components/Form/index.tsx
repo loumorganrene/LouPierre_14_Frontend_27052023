@@ -82,6 +82,7 @@ function Form() {
             dateFormat="dd/MM/yyyy"
             onChange={onChange}
             selected={value}
+            placeholderText={'dd/mm/yyyy'} 
           />
         )}
       />
@@ -97,6 +98,7 @@ function Form() {
             dateFormat="dd/MM/yyyy"
             onChange={onChange}
             selected={value}
+            placeholderText={'dd/mm/yyyy'} 
           />
         )}
       />
