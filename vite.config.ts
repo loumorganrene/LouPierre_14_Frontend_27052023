@@ -23,7 +23,7 @@ export default defineConfig({
         background_color: '#ffffff',
         display: 'standalone',
         scope: '/',
-        start_url: '/',
+        start_url: '/LouPierre_14_Frontend_27052023/',
         orientation: 'portrait',
         icons: [
           {
