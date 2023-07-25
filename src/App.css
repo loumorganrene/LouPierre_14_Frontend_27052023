@@ -43,8 +43,8 @@ h2 {
 }
 
 a {
-  color: var(--secondary-clr);
-  border-color: var(--secondary-clr);
+  color: var(--primary-clr);
+  border-color: var(--primary-clr);
   text-decoration: none;
   font-weight: 600;
   list-style-type: none;
@@ -54,12 +54,7 @@ a {
   border-radius: 5px;
 }
 
-a:hover {
-  color: var(--primary-clr);
-}
-
-.active,
-.active:hover {
+.active {
   color: white;
   border-color: var(--primary-clr);
   background-color: var(--primary-clr);

@@ -6,5 +6,8 @@ footer {
     a {
         width: 100px;
         text-align: center;
+        color: white;
+        border-color: var(--primary-clr);
+        background-color: var(--primary-clr);
     }
 }
