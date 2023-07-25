@@ -5,7 +5,20 @@ function Nav() {
     return (
         <nav className="main-nav">
             <Link to='/' className="main-nav-logo">
-                <h1>HR<span>net</span></h1>
+                <h1>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="105" height="39" viewBox="0 0 105 39">
+                        <text
+                            id="HRnet"
+                            transform="translate(0 31)"
+                            fill="#145495"
+                            font-size="32"
+                            font-family="Montserrat"
+                            font-weight="600"
+                        >
+                            <tspan x="0" y="0">HR</tspan><tspan y="0" fill="#74b9ff">net</tspan>
+                        </text>
+                    </svg>
+                </h1>
             </Link>
 
             <ul className='main-nav-links'>
