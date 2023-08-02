@@ -4,14 +4,14 @@ import { DataRow } from "../.."
 const columns: TableColumn<DataRow>[] = [
     {
         name: 'First Name',
-        selector: row => row.first_name,
+        selector: row => row.first_name.charAt(0).toUpperCase() + row.first_name.slice(1),
         sortable: true,
         wrap: true,
         minWidth: 'fit-content',
     },
     {
         name: 'Last Name',
-        selector: row => row.last_name,
+        selector: row => row.last_name.charAt(0).toUpperCase() + row.first_name.slice(1),
         sortable: true,
         minWidth: 'fit-content',
     },
