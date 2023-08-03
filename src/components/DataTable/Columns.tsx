@@ -11,7 +11,7 @@ const columns: TableColumn<DataRow>[] = [
     },
     {
         name: 'Last Name',
-        selector: row => row.last_name.charAt(0).toUpperCase() + row.first_name.slice(1),
+        selector: row => row.last_name.charAt(0).toUpperCase() + row.last_name.slice(1),
         sortable: true,
         minWidth: 'fit-content',
     },
